@@ -4,10 +4,11 @@ shinyUI(fluidPage(
   sidebarLayout(
     sidebarPanel(
     h5('Start entering your sentence. Please enter space after last word and wait for your results.'),
-    textInput(inputId="text1", label = "Your Input", "This is a beautiful ")
+    textInput(inputId="text1", label = "Your Input", "This is a beautiful "),
+    submitButton('Submit')
   ),
   mainPanel(
-    h5('Your Possible Next Word/s'),
+    h5('Your Possible Next Word'),
     textOutput('text1')
   )
 )))
