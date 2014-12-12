@@ -53,7 +53,7 @@ predict <- function(sentence) {
   if(nrow(match_4)>0){
   #  print("Based on tetragram analysis, looks like this is the word you want next")
     match_4 <- match_4[order(-match_4$freq),]
-    n <- min(10,nrow(match_4))
+    n <- min(1,nrow(match_4))
     predictions <- vector()
     for(i in 1:n){
       #predictions[i] <- stemCompletion(ftdf[i,4],highfreqcorpus)
@@ -68,7 +68,7 @@ predict <- function(sentence) {
     if(nrow(match_3)>0){
     #  print("Based on trigram analysis, looks like this is the word you want next")
       match_3 <- match_3[order(-match_3$freq),]
-      n <- min(10,nrow(match_3))
+      n <- min(1,nrow(match_3))
       predictions <- vector()
       for(i in 1:n){
         #predictions[i] <- stemCompletion(ftdf[i,4],highfreqcorpus)
@@ -85,7 +85,7 @@ predict <- function(sentence) {
       if(nrow(match_2)>0){
       #  print("Based on bigram analysis, looks like this is the word you want next")
         match_2 <- match_2[order(-match_2$freq),]
-        n <- min(10,nrow(match_2))
+        n <- min(1,nrow(match_2))
         predictions <- vector()
         for(i in 1:n){
           #predictions[i] <- stemCompletion(ftdf[i,4],highfreqcorpus)
