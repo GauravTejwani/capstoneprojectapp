@@ -10,7 +10,7 @@ library(RWeka)
 library(slam)
 
 #Set working Directory
-setwd("C:/Users/gt8616/Desktop/Coursera/Projects/Capstone/final/en_US/19112014")
+#setwd("C:/Users/gt8616/Desktop/Coursera/Projects/Capstone/final/en_US/19112014")
 tdm_2 <- readRDS("12dectdm_2.rds")
 tdm_3 <- readRDS("12dectdm_3.rds")
 tdm_4 <- readRDS("12dectdm_4.rds")
@@ -103,6 +103,6 @@ predict <- function(sentence) {
 shinyServer(
   
   function(input, output) {
-    output$text1 <- renderText({paste(predict(input$text1),sep=",",collapse=", ")})
+    output$text1 <- renderText({paste(predict(paste(input$text1," .")),sep=",",collapse=", ")})
   }
 )
